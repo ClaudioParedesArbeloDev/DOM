@@ -38,7 +38,17 @@ let formulario = document.getElementById("formulario");
 
 formulario.addEventListener('submit', validacion);
 
-function validacion(e){
+/* function validacion(e){
     e.preventDefault();
     console.log(`Nombre: ${formulario.nombre.value} y el Apellido es ${formulario.apellido.value}`);
+} */
+
+function validacion(e){
+    e.preventDefault();
+
+    let form = e.target;
+
+    console.log(form.children[3].value);
+    
 }
+
