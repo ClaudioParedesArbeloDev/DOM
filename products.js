@@ -53,5 +53,6 @@ search.addEventListener('input', busqueda);
 
 function busqueda(){
     let busqueda = search.value;
-    console.log(busqueda);
+    let productoBuscado = productos.filter(producto => producto.nombre.includes(busqueda));
+    console.log(productoBuscado);
 }
