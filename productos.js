@@ -31,13 +31,54 @@ let productos = [
     {id: 30, marca: "QUECHUA", modelo: "Cantimplora 900 isotérmica inox 0,5L tapón apertura rápida para senderismo", descripcion: "Cantimplora isoterma para mantener los líquidos calientes o fríos. Mucho más ligera que una cantimplora isoterma convencional. Tapón de rosca, apertura fácil, con filtro integrado. / 0,5 litro", precio: "8.99", imagen:"https://contents.mediadecathlon.com/p2851434/k$e11979a956b3943db2f39a92e6f44448/picture.jpg?format=auto&f=640x0", stock: 30, categoria: "ropa montaña, trekking y senderismo" },
 ]
 
+//capturamos el elemento con id container
 let container = document.getElementById("container");
 
-for (const producto of productos){
-    let contenedor = document.createElement('div');
-    contenedor.innerHTML = `
-        <img src=" ${producto.imagen}" class="card-img-top" alt="producto">
-
-    `
+//funcion que renderiza los productos
+function renderProductos(array){
+    //limpiamos el contenedor
+    container.innerHTML = '';
+    //iteramos el array productos
+    for (const producto of array){
+        //creamos un nuevo elemento con el contenedor
+        let contenedor = document.createElement('div');
+        //agregamos el html al contenedor
+        contenedor.innerHTML = `
+            <div class="cardProducto">
+                <img src="${producto.imagen}" class="cardImage" alt="...">
+                <div class="cardBody">
+                    <h5 class="cardTitle">${producto.marca}</h5>
+                    <p class="cardText">${producto.modelo}</p>
+                    <p class="cardText">Є ${producto.precio}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>`
+    //agregamos una clase al contenedor para porder darle estilo
+    contenedor.classList.add('productos');
+    //agregamos la clase productos al contenedor
     container.appendChild(contenedor);
+    }
+}
+
+
+//Render Inicial
+renderProductos(productos);
+
+
+//capturamos el elemento con id search que es un input
+let search = document.getElementById("search");
+
+
+//escuchar el evento de lo que ingreso en el input
+//los eventos necesitamos pasarle cual es el evento a escuchar y la funcion que va a disparar ese evento.
+search.addEventListener('input', busqueda);
+
+//funcion que busca en el input y renderiza los productos
+function busqueda(){
+    //capturamos el valor del input
+    let texto = search.value.toLowerCase();
+    //filtramos el array productos
+    let productoBuscado = productos.filter(producto => producto.modelo.toLowerCase().includes(texto));
+    //renderizamos los productos
+    renderProductos(productoBuscado);
 }
