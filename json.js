@@ -64,15 +64,36 @@ for (const producto of productos){
     guardarLocal(producto.id, JSON.stringify(producto));
 }
 
-for (let i = 5; i < 10; i++){
-    console.log(i)
+//guardamos el array completo de productos en el localStorage
+guardarLocal("listaProductos", JSON.stringify(productos));
+
+//una clase constructora que va a dar molde a un objeto
+// pero que solo va a tener marca, modelo y precio
+class Producto {
+    constructor(obj){
+        this.marca = obj.marca.toUpperCase();
+        this.modelo = obj.modelo.toLowerCase();
+        this.precio = parseFloat(obj.precio);
+    }
+
+    sumarIva(){
+        this.precio = this.precio * 1.21;
+    }
 }
 
-for (const pirulo of productos) {
-    console.log(pirulo)
-    
+//recuperar el array de productos parseandolo para tenerlo con clave y valor
+const almacenados = JSON.parse(localStorage.getItem("listaProductos"));
+
+
+//Crear un array de productos vacio para poder pushear 
+const productillos = [];
+
+//el bucle for of va a recorrer el array almacenados
+for (const o of almacenados){
+    productillos.push(new Producto(o));
 }
 
+console.log(productillos);
 
 
 
