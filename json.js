@@ -95,6 +95,35 @@ for (const o of almacenados){
 
 console.log(productillos);
 
+//recuperar datos
+//creamos una variable usuario vacia
+let usuario;
+
+//recuperamos el usuario si existe
+let usuarioEnLS = localStorage.getItem("usuario");
+
+//imprimimos el usuario si existe
+console.log(usuarioEnLS);
+
+//si existe, lo recuperamos y lo asignamos a usuario
+if(usuarioEnLS){
+    usuario = usuarioEnLS
+}else{
+    usuario = prompt("Introduce tu nombre");
+    localStorage.setItem("usuario", usuario);
+}
+
+//Como mandar nuestros productos al carrito
+
+//crear un array de productos vacio
+
+const carrito = [];
+
+//recuperar los productos del localStorage
+const carritoEnLS = JSON.parse(localStorage.getItem("carrito"));
+
+console.log(carritoEnLS);
+
 
 
 
