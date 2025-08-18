@@ -37,9 +37,11 @@ permiso ? console.log('Puede comprar cerveza') : console.log('No puede comprar c
 
 
 
-const carrito = ['manzana', 'pera', 'mandarina'];
+const carrito = [];
 
-if (carrito.length === 0) {
+carrito.length === 0 && console.log('El carrito está vacío') 
+
+/* if (carrito.length === 0) {
     console.log('El carrito está vacío');
 }else {
     for (let i = 0; i < carrito.length; i++) {
@@ -62,8 +64,40 @@ localStorage.setItem('carrito', JSON.stringify(carrito));
 
 
 
-const carrito2 = JSON.parse(localStorage.getItem('carrito'));
+const carrito2 = JSON.parse(localStorage.getItem('carrito')); */
 
-const contador = document.getElementById('num');
-contador.innerHTML = carrito2.length;
+/* const contador = document.getElementById('num');
+contador.innerHTML = carrito2.length; */
+
+const user = {
+    nombre: ' Jony',
+    edad: 14,
+    sexo: 'masculino'
+}
+
+const registroIngreso = user.edad >= 18 && new Date()
+
+console.log(registroIngreso);
+
+
+console.log(0 || "Falsy");
+console.log(1 || "Falsy");
+console.log(null || "Falsy");
+console.log(undefined || "Falsy");
+console.log(false || "Falsy");
+console.log(true || "Falsy");
+
+const usuario1 = {
+    nombre: 'Roberto',
+    edad: 19,
+    sexo: 'masculino'
+}
+
+const usuario2 = null;
+
+console.log(usuario1 || "El usuario no existe");
+
+console.log(usuario2 || "El usuario no existe");
+
+
 
