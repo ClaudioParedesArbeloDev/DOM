@@ -1,0 +1,23 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ejecricio.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaudioParedesArbeloDev/DOM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClaudioParedesArbeloDev/DOM/issues"
+  },
+  "homepage": "https://github.com/ClaudioParedesArbeloDev/DOM#readme",
+  "dependencies": {
+    "animejs": "^4.1.3"
+  }
+}
