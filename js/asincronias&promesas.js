@@ -16,3 +16,51 @@ btn.addEventListener('click', ()=>{
         popup.classList.remove('popup-active');
     }, 2500);
 })
+
+for(let letra of 'Hola'){
+    setTimeout(()=>{
+        console.log(letra);
+    }, 1000);
+}
+for(let letra of 'Mundo'){
+    setTimeout(()=>{
+        console.log(letra);
+    }, 2500)
+}
+
+function multiplicar(a, b){
+    return a * b;
+}
+
+function alCuadrado(x){
+    let resultado = multiplicar(x, x);
+
+    console.log(resultado);
+};
+
+alCuadrado(2);
+
+console.log('aca inicia el proceso');
+
+setTimeout(()=>{
+    console.log('esto es la mitad del proceso');
+}, 0);
+
+console.log('aca termina el proceso');
+
+setInterval(()=>{
+    console.log('aca inicia el proceso');
+},1000);
+
+let contador = 0;
+
+const intervalo = setInterval(()=>{
+    contador++;
+    console.log("Contador: ", contador);
+
+    if(contador >= 10){
+        clearInterval(intervalo);
+        console.log('aca termina el proceso');
+    }
+
+}, 1000);
