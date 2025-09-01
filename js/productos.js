@@ -86,3 +86,4 @@ function busqueda(){
 setTimeout(()=>{
     alert("Hola, compra mis productos")
 }, 3000);
+

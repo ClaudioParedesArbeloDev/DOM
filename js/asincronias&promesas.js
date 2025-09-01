@@ -68,7 +68,7 @@ const intervalo = setInterval(()=>{
 
 setTimeout(()=> {console.log("Hola")}, 4000)
 
-const eventoFuturo = (positivo)=>{
+/* const eventoFuturo = (positivo)=>{
     return new Promise((resolve, reject)=>{
         if(positivo === true){
             resolve('El evento fue resuelto');
@@ -76,9 +76,9 @@ const eventoFuturo = (positivo)=>{
             reject('El evento fue rechazado');
         }
     })
-}
+} */
 
-console.log(eventoFuturo(true));
+/* console.log(eventoFuturo(true)); */
 
 const eventoFut = (res)=>{
     return new Promise((resolve, reject) => {
@@ -88,6 +88,12 @@ const eventoFut = (res)=>{
     })
 }
 
-console.log(eventoFut(true));
 
-console.log(eventoFut(false));
+eventoFut(false)
+    .then((response)=>{
+        console.log(response);
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+
