@@ -82,3 +82,7 @@ function busqueda(){
     //renderizamos los productos
     renderProductos(productoBuscado);
 }
+
+setTimeout(()=>{
+    alert("Hola, compra mis productos")
+}, 3000);

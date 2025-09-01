@@ -64,3 +64,30 @@ const intervalo = setInterval(()=>{
     }
 
 }, 1000);
+
+
+setTimeout(()=> {console.log("Hola")}, 4000)
+
+const eventoFuturo = (positivo)=>{
+    return new Promise((resolve, reject)=>{
+        if(positivo === true){
+            resolve('El evento fue resuelto');
+        }else{
+            reject('El evento fue rechazado');
+        }
+    })
+}
+
+console.log(eventoFuturo(true));
+
+const eventoFut = (res)=>{
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            res ? resolve('El evento fue resuelto') : reject('El evento fue rechazado');
+        }, 2000)
+    })
+}
+
+console.log(eventoFut(true));
+
+console.log(eventoFut(false));
